@@ -72,15 +72,15 @@
 											<c:if test="${viewOnly}">
 												<form:select path="role" cssClass="form-control" readonly="${viewOnly}">
 													<form:option value="1">Người quản trị</form:option>
-													<form:option value="2">Bác sĩ</form:option>
-													<form:option value="3">Y tá</form:option>
+													<form:option value="2"> Nhân viên</form:option>
+												 
 												</form:select>
 											</c:if>
 											<c:if test="${!viewOnly}">
 												<form:select path="role" cssClass="form-control">
 													<form:option value="1">Người quản trị</form:option>
-													<form:option value="2">Bác sĩ</form:option>
-													<form:option value="3">Y tá</form:option>
+													<form:option value="2">Nhân viên </form:option>
+													 
 												</form:select>
 											</c:if>
 												 										
