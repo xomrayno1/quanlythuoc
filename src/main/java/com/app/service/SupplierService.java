@@ -11,7 +11,7 @@ public interface SupplierService {
 	void update(SupplierDTO supplierDTO) throws Exception;
 	List<SupplierDTO> getAll(SupplierDTO supplierDTO , Paging paging);
 	List<SupplierDTO> getAllByProperty(String property , Object object);
-	SupplierDTO findById(int id);
+	SupplierDTO findById(long id);
 	
 	public SupplierDTO findByName(String name);
 }

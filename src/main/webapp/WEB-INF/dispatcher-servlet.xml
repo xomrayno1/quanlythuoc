@@ -98,8 +98,11 @@
      		<mvc:interceptors>
      			<mvc:interceptor>
      				<mvc:mapping path="/manage/**"/>
+     				<mvc:mapping path="/customers/**"/>
      				<mvc:mapping path="/invoice/**"/>
      				<mvc:mapping path="/statistics/**"/>
+     				<mvc:mapping path="/goods-issue/**"/>
+     				<mvc:mapping path="/goods-receipt/**"/>
      				<bean class="com.app.filter.FilterAdmin"/>
      			</mvc:interceptor>		
      		</mvc:interceptors>

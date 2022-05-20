@@ -99,7 +99,7 @@ public class SupplierServiceImpl  implements SupplierService{
 		return list;
 	}
  
-	public SupplierDTO findById(int id) {
+	public SupplierDTO findById(long id) {
 		// TODO Auto-generated method stub
 		Supplier supplier = supplierDAO.findById(Supplier.class, id);
 		SupplierDTO dto = ConvertDTO.convertSupplierToDTO(supplier);

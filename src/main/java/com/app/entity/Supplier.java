@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	private String name;
 	private String code;
 	private String address;
@@ -36,10 +36,10 @@ public class Supplier {
 		super();
 		this.id = id;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {

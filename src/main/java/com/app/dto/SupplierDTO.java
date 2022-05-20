@@ -3,7 +3,7 @@ package com.app.dto;
 import java.util.Date;
 
 public class SupplierDTO  {
-	private int id;
+	private long  id;
 	private String name;
 	private String code;
 	private String address;
@@ -13,10 +13,10 @@ public class SupplierDTO  {
 	private Date updateDate;
 	private int activeFlag;
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
