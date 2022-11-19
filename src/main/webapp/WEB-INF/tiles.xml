@@ -14,7 +14,6 @@
 	<definition	name="access-denied" template="/WEB-INF/views/access-denied/access-denied.jsp"/>
 	<definition	name="404-notfound" template="/WEB-INF/views/404/404-notfound.jsp"/>
 
-
 	<definition	name="drug-list" extends="master">
 		<put-attribute name="body" value="/WEB-INF/views/product/product-list.jsp"/>
 	</definition>
@@ -28,38 +27,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/user/user-action.jsp"/>
 	</definition>
 
-	<definition	name="goods-receipt-list" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/goods-receipt/goods-receipt-list.jsp"/>
-	</definition>
-	<definition	name="goods-receipt-action" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/goods-receipt/goods-receipt-action.jsp"/>
-	</definition>
- 
-	<definition	name="goods-issue-list" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/goods-issue/goods-issue-list.jsp"/>
-	</definition>
-	<definition	name="goods-issue-action" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/goods-issue/goods-issue-action.jsp"/>
-	</definition>
-	
- 
 	<definition	name="supplier-list" extends="master">
 		<put-attribute name="body" value="/WEB-INF/views/supplier/supplier-list.jsp"/>
 	</definition>
 	<definition	name="supplier-action" extends="master">
 		<put-attribute name="body" value="/WEB-INF/views/supplier/supplier-action.jsp"/>
 	</definition>
-	
-	<definition	name="customer-list" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/customer/customer-list.jsp"/>
-	</definition>
-	<definition	name="customer-action" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/customer/customer-action.jsp"/>
-	</definition>
-	
-	
-	<definition	name="chart" extends="master">
-		<put-attribute name="body" value="/WEB-INF/views/chart/chart.jsp"/>
-	</definition>
-	
+ 
 </tiles-definitions>

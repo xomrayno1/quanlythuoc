@@ -9,41 +9,21 @@
 				</li>
 				
 			</ul>
-			  <c:if test="${userInfo.role == 1  || userInfo.role == 2}">  
-				<ul class="nav side-menu" id="mainAct">
-					<li><a><i class="fa fa-tasks"></i>Tác vụ chính<span class="fa fa-chevron-down"></span></a>
-						<ul class="nav child_menu">
-							<li id="goodsIssued"><a href='<c:url value="/goods-issue/add/1"></c:url>'> Bán hàng </a></li> 	
-							<c:if test="${userInfo.role == 1 }">  
-								<li id="goodsReceipt"><a href='<c:url value="/goods-receipt/add/1"></c:url>'>Nhập hàng </a></li> 
-							</c:if> 					
-						</ul>
-					</li>
-				</ul>	
-				</c:if> 
-				<c:if test="${userInfo.role == 1 }">  
+ 
+				 
 				<ul class="nav side-menu" id="manage">
 					<li><a><i class="fa fa-users"></i>Quản lý<span class="fa fa-chevron-down"></span></a>
 						<ul class="nav child_menu">
 							<li id="drugList"><a href='<c:url value="/manage/drug/list"></c:url>'>Thuốc</a></li>
-							<li id="supplierlist"><a href='<c:url value="/manage/supplier/list"></c:url>'>Nhà cung cấp </a></li>
-							<li id="userlist"><a href='<c:url value="/manage/user/list"></c:url>'>Tài khoản</a></li>	
-							<li id="customerslist"><a href='<c:url value="/customers/list"></c:url>'>Khách hàng</a></li>
-							<li id="goodsIssuedList"><a href='<c:url value="/goods-issue/list/1"></c:url>'>Xuất hàng </a></li> 	
-							<li id="goodsReceiptList"><a href='<c:url value="/goods-receipt/list/1"></c:url>'>Nhập hàng </a></li> 	
-							 
+							<c:if test="${userInfo.role == 1 }">  
+								<li id="supplierlist"><a href='<c:url value="/manage/supplier/list"></c:url>'>Nhà cung cấp </a></li>
+								<li id="userlist"><a href='<c:url value="/manage/user/list"></c:url>'>Tài khoản</a></li>	
+							 </c:if> 
 						</ul>
 					</li>
 				</ul>
-				
-				<ul class="nav side-menu" id="statistics">
-					<li><a><i class="fa fa-bar-chart"></i>Thống kê<span class="fa fa-chevron-down"></span></a>
-						<ul class="nav child_menu">
-						 	<li id="chart"><a href='<c:url value="/statistics/chart"></c:url>'>Chart</a></li>		
-						</ul>
-					</li>
-				</ul>
- 			</c:if> 
+				 
+ 			 
 			 
 	</div>
 </div>

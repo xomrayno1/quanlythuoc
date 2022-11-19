@@ -42,7 +42,9 @@
 
 	
 	<div class="table-responsive">
+		<c:if test="${userInfo.role == 1 }">   
 		<a href='<c:url value="/manage/drug/add"></c:url>'><button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>Thêm</button></a>
+		</c:if>
 		<!-- 
 			<a data-toggle="modal" data-target="#excel-modal"	href="javascript:void(0)" ><button class="btn btn-success" title="import sản phẩm"><i class="glyphicon glyphicon-import"></i> Import</button></a>
 		<a href='<c:url value="/product/excel-file"></c:url>'><button class="btn btn-default" title="lấy mẫu import"><i class="glyphicon glyphicon-file"></i> Document</button></a>
@@ -70,8 +72,10 @@
                             <td colspan="3" class="last text-center">
                             	<input type="hidden" id="idProduct" value="${item.id}">
 	                            <a href='<c:url value="/manage/drug/view/${item.id}"></c:url>' class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></a> 
-	                            <a href='<c:url value="/manage/drug/edit/${item.id}"></c:url>' class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></a> 
-	                            <a href="javascript:void(0)" onclick="deleteItem(${item.id})" class="btn btn-danger btn-delete"><i class="glyphicon glyphicon-trash"></i></a>
+	                            <c:if test="${userInfo.role == 1 }">    
+	                           	 	<a href='<c:url value="/manage/drug/edit/${item.id}"></c:url>' class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></a> 
+	                            	<a href="javascript:void(0)" onclick="deleteItem(${item.id})" class="btn btn-danger btn-delete"><i class="glyphicon glyphicon-trash"></i></a>
+                            	</c:if>
                             </td>                  
                           	</tr>
                           </c:forEach>						

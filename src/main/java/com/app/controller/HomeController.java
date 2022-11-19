@@ -1,11 +1,6 @@
 package com.app.controller;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -21,14 +16,10 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.app.dao.InvoiceDAO;
-import com.app.entity.Invoice;
 import com.app.entity.User;
 import com.app.service.UserService;
 import com.app.utils.Constant;
 import com.app.validator.LoginValidator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class HomeController {
@@ -36,11 +27,7 @@ public class HomeController {
 	UserService userService;
 	@Autowired
 	LoginValidator loginValidator;
-	
-	@Autowired
-	InvoiceDAO<Invoice> invoiceDAO;
-	
-	
+ 
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		if(dataBinder.getTarget() == null) {
@@ -84,45 +71,7 @@ public class HomeController {
 		return "redirect:/index";
 	}
 	
-	@GetMapping("/statistics/chart")
-	public String statistics(HttpSession session, Model model) {
-		initBarChart(model);
-		return "chart";
-	}
-	
-	private void initBarChart(Model model) {
-		 ObjectMapper mapper = new ObjectMapper();
-		 Calendar calendar = Calendar.getInstance();
-		 calendar.setTime(new Date());
-		 
-		 Map<Integer,Object> mapReceipt = new  HashMap(); 	
-	
-		 for(Integer i = 1 ; i <= 12 ;i++) {
-			 mapReceipt.put(i, 0);		 
-		 }
-		 //theo thang
-		 List<Map<String, Object>> maps = invoiceDAO.getBarChartByMonth(calendar.get(Calendar.YEAR));
-		 for(Map<String,Object> item :	maps) {
-			 mapReceipt.put(Integer.parseInt(item.get("month").toString()), item.get("totalPrice"));
-		 }
-		 List<Map<String,Object>> lstObjectPrice = new ArrayList<Map<String,Object>>();
 	 
-		 for(Integer key : mapReceipt.keySet()) {
-			 Map<String,Object> receipt = new  HashMap();
-			 receipt.put("label", key);
-			 receipt.put("value", mapReceipt.get(key));
-			 lstObjectPrice.add(receipt);
-		 }
-	 
-		try {
-			String jsonPriceMonth = mapper.writeValueAsString(lstObjectPrice);		
-			System.out.println(jsonPriceMonth);
-			model.addAttribute("barcharJsonPriceMonth", jsonPriceMonth);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
  
 }
